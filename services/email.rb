@@ -152,9 +152,9 @@ class Service::Email < Service
 
   def mail_subject
     if first_commit
-      "[#{name_with_owner}] #{first_commit_sha.slice(0, 6)}: #{first_commit_title}"
+      "[#{repository_name}] #{first_commit_sha.slice(0, 6)}: #{first_commit_title}"
     else
-      "[#{name_with_owner}]"
+      "[#{repository_name}]"
     end
   end
 
@@ -193,10 +193,6 @@ class Service::Email < Service
 
   def secret
     data['secret'] if data['secret'].to_s.size > 0
-  end
-
-  def name_with_owner
-    File.join(owner_name, repository_name)
   end
 
   def owner_name
