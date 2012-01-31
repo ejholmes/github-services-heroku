@@ -34,11 +34,11 @@ $ git config github-services.services "email lighthouse"
 And configure the options for each service:
 
 ```bash
-$ git config github-services.email.address = "me@example.com"
+$ git config github-services.email.address "me@example.com"
 
-$ git config github-services.lighthouse.domain = "mydomain"
-$ git config github-services.lighthouse.token = "mytoken"
-$ git config github-services.lighthouse.project_id = "12345"
+$ git config github-services.lighthouse.domain "mydomain"
+$ git config github-services.lighthouse.token "mytoken"
+$ git config github-services.lighthouse.project_id "12345"
 ```
 
 It's likely that some services won't work, I've only tested the web, lighthouse
