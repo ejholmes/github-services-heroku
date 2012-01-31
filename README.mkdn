@@ -13,12 +13,19 @@ The server processes post requests to `http://github-services.heroku.com/[servic
 ## Installation
 Install the post-receive hook from [Gist](https://gist.github.com/1709372).
 
-```ruby
+```bash
 $ curl https://raw.github.com/gist/1709372 > [~/repositories/repo.git]/hooks/post-receive
+$ chmod +x [~/repositories/repo.git]/hooks/post-receive
+```
+
+Then install the grit and json gems.
+
+```bash
+$ [sudo] gem install grit json
 ```
 
 If you're using something like Gitolite, you can install the post-receive hook
-in `.gitolite/hooks/common`:
+in `.gitolite/hooks/common`
 
 ## Configuring Services
 The post-receive hook gets it's configuration through `git config`.
