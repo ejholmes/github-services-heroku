@@ -240,7 +240,7 @@ class Service::Email < Service
   end
 
   def smtp_domain
-    @smtp_domain ||= email_config['domain'] || 'localhost.localdomain'
+    @smtp_domain ||= email_config['domain'] || 'github-services.heroku.com'
   end
 
   def smtp_authentication
@@ -248,11 +248,11 @@ class Service::Email < Service
   end
 
   def smtp_user_name
-    @smtp_user_name ||= email_config['user_name']
+    @smtp_user_name ||= email_config['user_name'] || ENV["SENDGRID_USERNAME"]
   end
 
   def smtp_password
-    @smtp_password ||= email_config['password']
+    @smtp_password ||= email_config['password'] || ENV["SENDGRID_PASSWORD"]
   end
 
   def smtp_enable_starttls_auto?

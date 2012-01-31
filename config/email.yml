@@ -1,4 +1,3 @@
 ---
-address: smtp1.rs.github.com
+address: smtp.sendgrid.net
 port: 25
-domain: github.com
