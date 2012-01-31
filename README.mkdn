@@ -5,7 +5,7 @@ to run on heroku at <http://github-services.heroku.com>.
 This means you can use all the awesome GitHub post-receive hooks in your
 Gitolite/Gitosis/whatever repositories.
 
-You can find a post-receive hook for Gitolite repositories at <https://gist.github.com/1709372>,
+You can find a post-receive hook at <https://gist.github.com/1709372>,
 which requires the grit and json gems.
 
 The server processes post requests to `http://github-services.heroku.com/[service]/push`.
