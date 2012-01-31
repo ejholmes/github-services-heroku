@@ -264,6 +264,6 @@ class Service::Email < Service
   end
 
   def noreply_address
-    @noreply_address ||= email_config['noreply_address'] || "GitHub <noreply@github.com>"
+    @noreply_address ||= email_config['noreply_address'] || "GitHub Services <noreply@github-services.heroku.com>"
   end
 end
