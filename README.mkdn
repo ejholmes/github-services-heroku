@@ -13,7 +13,7 @@ The server processes post requests to `http://github-services.heroku.com/[servic
 ## Installation
 Install the post-receive hook from [Gist](https://gist.github.com/1709372).
 
-```ruby
+```bash
 $ curl https://raw.github.com/gist/1709372 > [~/repositories/repo.git]/hooks/post-receive
 ```
 
