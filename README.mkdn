@@ -45,3 +45,10 @@ $ git config github-services.lighthouse.domain = "mydomain"
 $ git config github-services.lighthouse.token = "mytoken"
 $ git config github-services.lighthouse.project_id = "12345"
 ```
+
+It's likely that some services won't work, I've only tested the web, lighthouse
+and email service. If you try to use one of the other services and it isn't
+working, shoot me and [email](mailto:eric@ejholmes.net) and I'll try to fix it.
+
+For a full list of services and available options see
+[Services.md](https://github.com/ejholmes/github-services-heroku/blob/master/Services.md)

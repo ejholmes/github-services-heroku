@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+services = []
+
+Dir.glob('services/*.rb') do |service|
+  contents = File.open(File.expand_path(service)).read
+
+  options = []
+
+  contents.split(/\n/).each do |line|
+    begin
+      option = /data\[['"](.*?)['"]\]/.match(line)[1]
+      options.push option if !options.include?(option)
+    rescue
+    end
+  end
+
+  services.push(
+    :name => /services\/(.*).rb/.match(service)[1],
+    :options => options
+  )
+end
+
+markdown = "# Services\n\n"
+
+services.each do |service|
+  markdown += "**#{service[:name]}**\n\n"
+  service[:options].each do |option|
+    markdown += "* #{option.gsub('_', '\_')}\n"
+  end
+  markdown += "\n"
+end
+
+File.open("Services.md", "w") { |f| f.write(markdown) }
